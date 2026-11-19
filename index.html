@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga MX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial;
+            background: #f3f3f3;
+        }
+
+        /* Menú */
+        nav {
+            background: #c8161d;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        /* Encabezado */
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+
+        .contenedor {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        h2 {
+            text-align: center;
+            color: #c8161d;
+            margin: 25px 0 15px;
+        }
+
+        /* Galería 5 imágenes */
+        .galeria {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .galeria img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Video CORREGIDO */
+        .video {
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #c8161d;
+            color: white;
+        }
+
+        /* Botones JS */
+        .botones {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            background: #c8161d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #resultado {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de Navegación -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#video">Video</a>
+        <a href="#tabla">Tabla</a>
+        <a href="#javascript">Funciones</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header id="inicio">
+        <h1>⚽ LIGA MX</h1>
+        <p>Fútbol profesional de México</p>
+    </header>
+
+    <div class="contenedor">
+        <!-- Galería 5 imágenes -->
+        <h2 id="galeria">Galería</h2>
+        <div class="galeria">
+            <img src="club america.htm" alt="América">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Chivas_logo.svg/200px-Chivas_logo.svg.png" alt="Chivas">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cruz_Azul_FC_logo.svg/200px-Cruz_Azul_FC_logo.svg.png" alt="Cruz Azul">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Club_Atlas_logo.svg/200px-Club_Atlas_logo.svg.png" alt="Atlas">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Club_Universidad_Nacional_logo.svg/200px-Club_Universidad_Nacional_logo.svg.png" alt="Pumas">
+        </div>
+
+        <!-- Iframe de YouTube ARREGLADO -->
+        <h2 id="video">Video</h2>
+        <div class="video">
+            <iframe 
+                src="https://youtu.be/udM6qh5a2rY?si=glKTOoaUa_KE8Bff"
+                title="Goles Liga MX"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Tabla -->
+        <h2 id="tabla">Equipos</h2>
+        <table>
+            <tr>
+                <th>Equipo</th>
+                <th>Ciudad</th>
+                <th>Títulos</th>
+            </tr>
+            <tr>
+                <td>América</td>
+                <td>CDMX</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>Chivas</td>
+                <td>Guadalajara</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Cruz Azul</td>
+                <td>CDMX</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Pumas</td>
+                <td>CDMX</td>
+                <td>7</td>
+            </tr>
+        </table>
+
+        <!-- 3 Funciones JavaScript -->
+        <h2 id="javascript">Prueba JavaScript</h2>
+        <div class="botones">
+            <button onclick="cambiarColor()">Cambiar color</button>
+            <button onclick="contarClics()">Contar clics</button>
+            <button onclick="mensaje()">Mensaje</button>
+        </div>
+        <p id="resultado"></p>
+    </div>
+
+    <footer>
+        Página Liga MX · Publicar en Vercel
+    </footer>
+
+    <script>
+        // 1
+        function cambiarColor(){
+            document.body.style.backgroundColor = "#ffdddd";
+        }
+
+        // 2
+        let contador = 0;
+        function contarClics(){
+            contador++;
+            document.getElementById("resultado").textContent = "Clics: " + contador;
+        }
+
+        // 3
+        function mensaje(){
+            alert("¡Arriba la Liga MX! 🇲🇽⚽");
+        }
+    </script>
+</body>
+</html>
